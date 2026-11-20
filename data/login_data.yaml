@@ -1,0 +1,65 @@
+cases:
+  - name: 密码错
+    username: emilys
+    password: emilys
+    expect_msg: Invalid credentials
+
+  - name: 用户名为空串
+    username: ""
+    password: emilyspass
+    expect_msg: Username and password required
+
+  - name: 用户名为null
+    username: null
+    password: emilyspass
+    expect_msg: Username and password required
+
+  - name: 用户不存在
+    username: emily
+    password: emilyspass
+    expect_msg: Invalid credentials
+
+  - name: 用户名传数字
+    username: 123
+    password: emilyspass
+    expect_msg: Username is not valid
+
+  - name: 密码为空串
+    username: emilys
+    password: ""
+    expect_msg: Username and password required
+
+  - name: 用户名密码都为null
+    username: null
+    password: null
+    expect_msg: Username and password required
+
+  - name: 明确不存在的账号
+    username: not_exist_abc
+    password: emilyspass
+    expect_msg: Invalid credentials
+
+  - name: 密码传数字
+    username: emilys
+    password: 123
+    expect_msg: Invalid credentials
+
+  - name: 用户名前后带空格
+    username: " emilys "
+    password: emilyspass
+    expect_msg: Invalid credentials
+
+  - name: 密码全大写
+    username: emilys
+    password: EMILYSPASS
+    expect_msg: Invalid credentials
+
+  - name: 密码多一个字母
+    username: emilys
+    password: emilyspasss
+    expect_msg: Invalid credentials
+
+  - name: 超长用户名100位
+    username: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    password: emilyspass
+    expect_msg: Invalid credentials
