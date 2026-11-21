@@ -4,6 +4,7 @@ import allure
 from api.login_api import login
 from config.settings import DATA_DIR
 
+
 with open(DATA_DIR / "login_data.yaml", encoding="utf-8") as f:
     CASES = yaml.safe_load(f)["cases"]
 
